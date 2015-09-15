@@ -4,7 +4,7 @@ require 'faraday'
 
 module Confluence
   module Api
-    module Client
+    class Client
       attr_accessor :user, :pass, :url, :conn
       def initialize(user, pass, url)
         self.user = user
