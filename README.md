@@ -34,6 +34,11 @@ Or install it yourself as:
     page = client.get({spaceKey: space, title: 'September'})[0]
     client.create({type:"page",title: "title", space: {key: space}, ancestors:[{type:"page",id: page['id']}]})
 
+## API Links
+
+https://developer.atlassian.com/confdev/confluence-rest-api
+https://developer.atlassian.com/confdev/confluence-rest-api/confluence-rest-api-examples
+
 
 ## Development
 
