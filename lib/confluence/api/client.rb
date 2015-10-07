@@ -31,6 +31,16 @@ module Confluence
         end
         JSON.parse(response.body)
       end
+
+      def update(id, params)
+        response = conn.put do |req|
+          req.url "/wiki/rest/api/content/#{id}"
+          req.headers['Content-Type'] = 'application/json'
+          req.body = params.to_json
+        end
+        JSON.parse(response.body)
+      end
+
     end
   end
 end
