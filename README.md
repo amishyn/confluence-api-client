@@ -28,7 +28,10 @@ Or install it yourself as:
     username = 'username'
     password = 'password'
     space    = 'Home'
-    url      = 'https://company.atlassian.net'
+    url      = 'https://company.atlassian.net/wiki'
+
+    # Note: url is automatically appended with /rest/api/content so if your
+    #       Confluence base URL is different from "/wiki" specify it above
 
     client = Confluence::Api::Client.new(username, password, url)
     page = client.get({spaceKey: space, title: 'September'})[0]
