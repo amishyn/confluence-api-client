@@ -19,13 +19,13 @@ module Confluence
       end
 
       def get(params)
-        response = conn.get('/wiki/rest/api/content', params)
+        response = conn.get('/rest/api/content', params)
         JSON.parse(response.body)['results']
       end
 
       def create(params)
         response = conn.post do |req|
-          req.url '/wiki/rest/api/content'
+          req.url '/rest/api/content'
           req.headers['Content-Type'] = 'application/json'
           req.body = params.to_json
         end
@@ -34,7 +34,7 @@ module Confluence
 
       def update(id, params)
         response = conn.put do |req|
-          req.url "/wiki/rest/api/content/#{id}"
+          req.url "/rest/api/content/#{id}"
           req.headers['Content-Type'] = 'application/json'
           req.body = params.to_json
         end
