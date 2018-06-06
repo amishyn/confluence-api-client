@@ -47,6 +47,9 @@ module Confluence
         JSON.parse(response.body)
       end
 
+      def delete(id)
+        conn.delete("rest/api/content/" + id)
+      end
     end
   end
 end
