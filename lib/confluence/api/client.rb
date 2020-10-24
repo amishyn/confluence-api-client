@@ -77,7 +77,7 @@ module Confluence
           request.url url
           request.body = content
         end
-puts ""
+
         [response.status == 200 ? :ok : :error, JSON.parse(response.body)]
       end
 
